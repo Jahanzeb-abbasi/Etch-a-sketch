@@ -23,12 +23,13 @@ h1 {
 .body {
     display: flex;
     justify-content: center;
+    margin-top: 10%;
 }
 
 .options {
-    flex: 1;
+    width: 200px;
 }
 
-.grid {
-    flex: 2;
+.grid-container {
+    width: 700px;
 }
