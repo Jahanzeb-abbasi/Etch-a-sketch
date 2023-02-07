@@ -5,9 +5,10 @@ function gridMaker(num) {
             newDiv.classList.add('grid-square')
             document.querySelector('.grid-container').appendChild(newDiv)
             // newDiv.style.backgroundColor = 'red'
-            newDiv.style.width = `${700/num}px`
-            newDiv.style.height = `${600/num}px`
+            newDiv.style.width = `${800/num}px`
+            newDiv.style.height = `${700/num}px`
             clickEffect(newDiv)
+            gridText(num)
         }
     }
 }
@@ -34,6 +35,11 @@ function clickEffect(gridDiv) {
 function reset() {
     const mainDiv = document.querySelector('.grid-container')
     mainDiv.innerHTML = ''
+}
+
+function gridText(num) {
+    const text = document.querySelector('.options-desc')
+    text.textContent = `${num}x${num}`
 }
 
 gridMaker(20)

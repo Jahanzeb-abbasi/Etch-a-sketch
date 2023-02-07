@@ -26,19 +26,22 @@ h1 {
 .body {
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .options {
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    align-items: center;
 }
 
 .grid-container {
-    width: 700px;
-    height: 600px;
+    width: 800px;
+    height: 700px;
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid black;
+    border: 2px solid whitesmoke;
 }
 
 .grid-square {
@@ -70,4 +73,10 @@ button.grid-size {
     background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
+  }
+
+  .options-desc {
+    font-size: 30px;
+    font-family: monospace;
+    margin-left: 2%;
   }
