@@ -4,10 +4,9 @@ function gridMaker(num) {
             const newDiv = document.createElement('div')
             newDiv.classList.add('grid-square')
             document.querySelector('.grid-container').appendChild(newDiv)
-            newDiv.style.backgroundColor = 'red'
+            // newDiv.style.backgroundColor = 'red'
             newDiv.style.width = `${700/num}px`
             newDiv.style.height = `${600/num}px`
-            newDiv.textContent = 0+1
             clickEffect(newDiv)
         }
     }
@@ -15,12 +14,26 @@ function gridMaker(num) {
 
 const gridSize = document.querySelector('.grid-size')
 gridSize.addEventListener('click', () => {
-    gridMaker(prompt('Enter a Grid Size number!'))
+    reset();
+    let gridRC = prompt('Enter a Grid Size number!')
+    while(gridRC > 60) {
+        gridRC = prompt('Enter a number below 60')
+    }
+    gridMaker(gridRC)
 })
 
 function clickEffect(gridDiv) {
     gridDiv.addEventListener('mouseenter',() => {
-        gridDiv.style.backgroundColor = 'yellow'
-        console.log('In Event Listener, yellow bg')
+        const red = Math.floor(Math.random()*257)
+        const blue = Math.floor(Math.random()*257)
+        const green = Math.floor(Math.random()*257)
+        gridDiv.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
     })
 }
+
+function reset() {
+    const mainDiv = document.querySelector('.grid-container')
+    mainDiv.innerHTML = ''
+}
+
+gridMaker(20)
